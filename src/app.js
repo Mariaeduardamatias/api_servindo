@@ -1,4 +1,5 @@
-const express = require('express');
+const express = require('express'); 
+const cors = require('cors');
 const app = express();
 const logger = require('./middlewares/logger');
 
@@ -7,6 +8,7 @@ const respiracaoRoutes = require('./routes/respiracaoRoutes');
 const autocuidadoRoutes = require('./routes/autocuidadoRoutes');
 const emergenciaRoutes = require('./routes/emergenciaRoutes');
 
+app.use(cors());  // <<< Aqui habilita CORS para todas as origens
 app.use(express.json());
 app.use(logger);
 
